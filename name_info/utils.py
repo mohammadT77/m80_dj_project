@@ -6,7 +6,7 @@ def get_age(name) -> int:
     return int(resp.json()['age'])
 
 
-def get_nationality(name) -> list:
+def get_nationalities(name) -> list:
     resp = requests.get("https://api.nationalize.io", params={'name': name})
     return [ c['country_id'] for c in resp.json()['country']]
 
